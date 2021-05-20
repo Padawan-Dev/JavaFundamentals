@@ -1,41 +1,25 @@
 public class AppJogoDaVelha {
 
+	Object [] x;
+
 	public static void main(String[] args) {
 
-		// criando tabuleiro de duas dimensões
-		char[][] tab = new char[3][3];
+		//Criando tabuleiro
+		Tabuleiro jogo = new Tabuleiro();
 
-		
-		/* Inicializando de forma diferente e com espaços em branco 
-		 * {{' ',' ',' '},{' ',' ',' '},{' ',' ',' '}};
-		 */
+		//Limpando tabuleiro e inserindo espaços em branco
+		jogo.clear();
 
-		/*Limpa tabuleiro*/
-		for (int i = 0; i < tab.length; i++) {
-			for (int j = 0; j < tab.length; j++) {
-				tab[i][j] = ' ';
+		//Criando lista de jogadas
+		Jogadas op = new Jogadas();
 
-			}
+		for (int i = 0; i < op.plays.length; i++) {
+			jogo.starting(op.start(i));
 
 		}
-		//TODO Definir jogadas e armazenar em uma lista
-		 char [] jogadas = {' ',' ','O','O','X','X','X',' ','X'};
-		 for (int i:jogadas) {
-			 System.out.println(i);
-		 }
-		 
-		  
-		
-		
-		
-//		   COLUNA
-//		   0  1   2 
-//	lINHA0(O, O , X)
-//		 1(0, X , O)
-//		 2(X, X , X)
-		                  
-		
-		
+
+		//Imprimindo tabuleiro com resultado final das jogadas;
+		jogo.print(); 
 
 	}
 
