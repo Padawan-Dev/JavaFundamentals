@@ -1,12 +1,14 @@
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.TreeSet;
 
 
 public class Produtos {
 
-	Collection <Produto> produtos = new TreeSet<>();
-	//Collection <Produtos> produtos = new HashSet<>();
-	//Collection <Produtos> produtos = new ArrayList<>();
+	//Collection <Produto> produtos = new TreeSet<>();
+	//Collection <Produto> produtos = new HashSet<>();
+	Collection <Produto> produtos = new ArrayList<>();
 	
 	
 	//Adiciona um produto a coleção
