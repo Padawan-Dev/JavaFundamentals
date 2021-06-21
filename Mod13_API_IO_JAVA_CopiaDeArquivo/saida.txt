@@ -1,0 +1,2 @@
+Copiando arquivo tanto texto quanto binario.
+Esta é a segunda linha do arquivo.
