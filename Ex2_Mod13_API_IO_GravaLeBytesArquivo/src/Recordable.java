@@ -4,11 +4,7 @@ import java.io.IOException;
 
 public interface Recordable {
 
-	public default void read(DataInputStream in) throws IOException{
-		
-	}
+	public void read(DataInputStream in) throws IOException;
 	
-	public default void write(DataOutputStream out) throws IOException{
-		
-	}
+	public void write(DataOutputStream out) throws IOException;
 }
