@@ -18,6 +18,7 @@ public static void main(String[] args) throws IOException{
 		
 		while((bytesLidos = in.read(buffer)) > -1) {
 			out.write(buffer,0,bytesLidos);
+			
 		}
 	}
 }
