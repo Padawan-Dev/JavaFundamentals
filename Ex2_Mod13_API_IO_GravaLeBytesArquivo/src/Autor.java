@@ -10,12 +10,12 @@ public class Autor implements Recordable{
 	
 	@Override
 	public void read(DataInputStream in) throws IOException {
-		// TODO Auto-generated method stub
+		//TODO implementar a leitura dos dados
 		
 	}
 	@Override
 	public void write(DataOutputStream out) throws IOException {
-		// TODO Auto-generated method stub
+		//TODO implementar a escrita dos dados no arquivo
 		
 	}
 	
