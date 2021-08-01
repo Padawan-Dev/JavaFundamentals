@@ -17,7 +17,7 @@ public class ListaCompras {
 		if(f.exists()) {
 			System.out.println("Itens já adicionados a lista:");
 			mostraLista(f);
-			System.out.println("Informe um item e pressione <ENTER> ! ");
+			System.out.println("Informe um item na lista e pressione <ENTER>! ");
 		}
 		//Metodo para ler do console e grava no arquivo TXT.
 		gravaLista(cin, fw);
@@ -25,12 +25,13 @@ public class ListaCompras {
 
 	private static void gravaLista(Scanner in, FileWriter out) throws IOException {
 		
-		while(in.hasNext() && !in.hasNext("0")) {
-			System.out.println("Informe um item da lista e pressione <ENTER>!");
+		while(in.hasNext() && !in.hasNextInt()) {
+			System.out.println("Informe um item na lista e pressione <ENTER>!");
 			String buffer = in.nextLine() + "\n";
 			out.write(buffer);
 
 		}
+		System.out.println("Entrada inválida.Encerrando aplicação!");
 		in.close();
 		out.close();
 	}
