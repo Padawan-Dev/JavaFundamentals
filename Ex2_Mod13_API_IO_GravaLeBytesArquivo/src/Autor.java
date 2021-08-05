@@ -15,7 +15,11 @@ public class Autor implements Recordable{
 	}
 	@Override
 	public void write(DataOutputStream out) throws IOException {
-		//TODO implementar a escrita dos dados no arquivo
+		out.write(nome.getBytes());//Aqui ta ok
+		out.write("\n".getBytes());//Inserindo caractere de quebra de linha
+		//TODO implementar data
+		
+		
 		
 	}
 	

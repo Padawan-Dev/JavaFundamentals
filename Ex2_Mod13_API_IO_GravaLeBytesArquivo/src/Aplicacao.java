@@ -1,8 +1,14 @@
+import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 public class Aplicacao {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 
 		
 		//TODO A aplicação deve pedir para que o usuário escolha 
@@ -19,9 +25,33 @@ public class Aplicacao {
         //devem ser criados e gravados em um arquivo.
 			
 			Livro livro1 = new Livro();
-			Livro livro2 = new Livro();
-			//TODO gravar objetos em arquivo
+			livro1.titulo = "titulo do livro1";
+			livro1.numPaginas = 15;
+			Autor autor1 = new Autor();
+			autor1.nome = "autorlivro1";
+			autor1.dataNascimento = new Date();
+			//TODO implementar data nascimento do autor
 			
+			
+			Livro livro2 = new Livro();
+			livro2.titulo = "titulo do livro2";
+			livro2.numPaginas = 20;
+			Autor autor2 = new Autor();
+			autor2.nome = "autorlivro2";
+			autor2.dataNascimento = new Date();
+						
+			
+		    DataOutputStream o = new DataOutputStream(new FileOutputStream("Livro.dat"));
+		    
+			livro1.write(o);
+			autor1.write(o);
+			livro2.write(o);
+			autor2.write(o);
+			
+			
+			
+			o.close();
+						
 		} else if (resp == 2) {
         //TODO Já se a opção de leitura for escolhida, estes dois objetos
 		//devem ser lidos do arquivo e impressos no console.
@@ -30,4 +60,6 @@ public class Aplicacao {
 		}
 		
 	}
+
+	
 }

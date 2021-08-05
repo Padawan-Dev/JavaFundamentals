@@ -8,6 +8,8 @@ public class Livro implements Recordable{
 	int numPaginas;
 	Autor autor;
 	
+	
+	
 	@Override
 	public void read(DataInputStream in) throws IOException {
 		// TODO Auto-generated method stub
@@ -15,7 +17,12 @@ public class Livro implements Recordable{
 	}
 	@Override
 	public void write(DataOutputStream out) throws IOException {
-		// TODO Auto-generated method stub
+		out.write(titulo.getBytes());
+		out.write("\n".getBytes()); //Inserindo caractere de quebra de linha 
+		out.writeByte(numPaginas);
+		out.write("\n".getBytes());
 		
+		
+				
 	}
 }
