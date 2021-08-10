@@ -8,12 +8,9 @@ public class AppLeitor {
 
 		String path = "Entrada.txt";
 
-		FileReader fr = null;
-		BufferedReader br = null;
 
-		try {
-			fr = new FileReader(path);
-			br = new BufferedReader(fr);
+		try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+
 
 			String line = br.readLine();
 			while (line != null) {
@@ -27,15 +24,7 @@ public class AppLeitor {
 		catch (IOException e) {
 			System.out.println("Erro inesperado: " + e.getMessage());
 		}
-		finally {
-			try {
-				br.close();
-				fr.close();
-			}
-			catch (IOException e) {
-				e.printStackTrace();
-			}
-		}		
+
 
 		/*PRIMEIRA VERSÃO DO LEITOR*/
 		//		File file = new File("Entrada.txt");
