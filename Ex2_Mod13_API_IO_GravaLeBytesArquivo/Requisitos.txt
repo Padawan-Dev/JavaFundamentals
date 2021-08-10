@@ -18,3 +18,5 @@ Dica: Objetos DataInputStream e DataOutputStream possuem métodos para ler/grava
 diversos tipos de dados, como String, int, double, etc. Eles encapsulam uma InputStream e
 uma OutputStream, respectivamente. Tenha em mente que a ordem de leitura dos dados do
 arquivo deve ser a mesma ordem de escrita.
+
+Henaldo marques - ItPower Software 

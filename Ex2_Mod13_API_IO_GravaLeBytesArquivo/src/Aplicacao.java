@@ -1,14 +1,16 @@
 import java.io.DataOutputStream;
-import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
+import java.io.OutputStream;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Scanner;
 
 public class Aplicacao {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, ParseException {
 
 		
 		//TODO A aplicação deve pedir para que o usuário escolha 
@@ -30,27 +32,42 @@ public class Aplicacao {
 			Autor autor1 = new Autor();
 			autor1.nome = "autorlivro1";
 			autor1.dataNascimento = new Date();
+			DateFormat df = DateFormat.getDateInstance(DateFormat.SHORT);
+			String s = df.format(autor1.dataNascimento);
+			System.out.println(s);
 			//TODO implementar data nascimento do autor
 			
 			
 			Livro livro2 = new Livro();
-			livro2.titulo = "titulo do livro2";
-			livro2.numPaginas = 20;
+			livro2.titulo = null;
+			livro2.numPaginas = 0;
 			Autor autor2 = new Autor();
-			autor2.nome = "autorlivro2";
+			autor2.nome = null;
 			autor2.dataNascimento = new Date();
+			DateFormat df2 = DateFormat.getDateInstance(DateFormat.SHORT);
+			String ss = df2.format(autor2.dataNascimento);
+			System.out.println(ss);
+			
+			//Teste de escrita em arquivo no formato de bytes - ok
+			String string = "Simple Testing";
+			int i = 50;
+	        byte[] bytes = string.getBytes();
+	        byte bytes2;
+	        System.out.println("String: " + string);
+	        System.out.println("Bytes: " + Arrays.toString(bytes));
+			
+//			OutputStream f = new FileOutputStream("Livro.txt");
+//			DataOutputStream o = new DataOutputStream(f);
+			
 						
-			
-		    DataOutputStream o = new DataOutputStream(new FileOutputStream("Livro.dat"));
-		    
-			livro1.write(o);
-			autor1.write(o);
-			livro2.write(o);
-			autor2.write(o);
+//			livro1.write(o);
+//			autor1.write(o);
+//			livro2.write(o);
+//			autor2.write(o);
+//			
 			
 			
 			
-			o.close();
 						
 		} else if (resp == 2) {
         //TODO Já se a opção de leitura for escolhida, estes dois objetos
