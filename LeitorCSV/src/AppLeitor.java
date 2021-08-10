@@ -1,39 +1,70 @@
-import java.io.File;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
-import java.util.Scanner;
 
 public class AppLeitor {
-	
+
 	public static void main(String[] args) {
-		
-		
-		File file = new File("Entrada.txt");
-		/*Você pode colocar o caminha absoluto se preferir, como:
-		 * No windows seria: ("c:\\temp\\Entrada.txt")
-		 * No linux seria:  ("   ");
-		 */
-		
-		Scanner sc = null;
+
+		String path = "Entrada.txt";
+
+		FileReader fr = null;
+		BufferedReader br = null;
+
 		try {
-		sc = new Scanner(file);
-		
-		while (sc.hasNextLine()) {
-			System.out.println(sc.nextLine());
-			
-		}
-		
+			fr = new FileReader(path);
+			br = new BufferedReader(fr);
+
+			String line = br.readLine();
+			while (line != null) {
+				System.out.println(line);
+				line = br.readLine();
+
+			}
+
+
 		}
 		catch (IOException e) {
-			
-			System.out.println(e.getMessage());
-			
+			System.out.println("Erro inesperado: " + e.getMessage());
 		}
 		finally {
-			if(sc != null) {
-			   sc.close();
+			try {
+				br.close();
+				fr.close();
 			}
-		}
-		
+			catch (IOException e) {
+				e.printStackTrace();
+			}
+		}		
+
+		/*PRIMEIRA VERSÃO DO LEITOR*/
+		//		File file = new File("Entrada.txt");
+		//		/*Você pode colocar o caminha absoluto se preferir, como:
+		//		 * No windows seria: ("c:\\temp\\Entrada.txt")
+		//		 * No linux seria:  ("   ");
+		//		 */
+		//		
+		//		Scanner sc = null;
+		//		try {
+		//		sc = new Scanner(file);
+		//		
+		//		while (sc.hasNextLine()) {
+		//			System.out.println(sc.nextLine());
+		//			
+		//		}
+		//		
+		//		}
+		//		catch (IOException e) {
+		//			
+		//			System.out.println(e.getMessage());
+		//			
+		//		}
+		//		finally {
+		//			if(sc != null) {
+		//			   sc.close();
+		//			}
+		//		}
+		//		
 	}
 
 }
